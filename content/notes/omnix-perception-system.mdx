@@ -1,0 +1,17 @@
+---
+title: "Building OMNIX's Perception System"
+date: "2024-03-15"
+summary: "How I shifted from OCR to YOLO + Accessibility Trees for autonomous agent vision."
+---
+
+### Problem
+Standard LLMs are blind to the desktop. To make an autonomous agent, it needs to see UI elements to know where to click or type.
+
+### Approach
+Initially, I tried using pure OCR, but it failed to understand UI hierarchy (like buttons vs text). I shifted to using **Ultralytics YOLO** to detect interactive bounding boxes combined with accessibility trees.
+
+### Failed attempts
+Taking screenshots every 100ms melted the CPU. The agent loop had to become discrete: `Observe (take one frame) -> Plan -> Act -> Verify`.
+
+### Lesson
+Vision-language models alone aren't enough for reliable computer control. You need a structured symbolic representation of the screen (bounding boxes) that an LLM can reason over.

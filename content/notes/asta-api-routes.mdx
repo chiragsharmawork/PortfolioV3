@@ -1,0 +1,9 @@
+---
+title: "Why I migrated to Next.js API Routes for ASTA"
+date: "2024-01-20"
+summary: "Moving from Express.js to Edge-compatible Route Handlers."
+---
+
+The previous iteration of ASTA used a separate Express server running on Render. It worked, but suffered from cold starts and CORS headaches.
+
+Moving to Next.js Route Handlers reduced the architecture complexity, improved latency by running on the edge, and secured the OpenRouter API keys without managing a separate backend deployment.
